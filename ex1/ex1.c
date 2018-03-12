@@ -8,7 +8,19 @@
 
 int main(int argc, char *argv[])
 {
-    // Your code here
+    int x = 100;
+
+    int process = fork();
+
+    if (process == 0) {
+        printf("The Child process ID: %d\n", process);
+    }
+    else if (process > 0) {
+        printf("The Parent process ID: %d\n", process);
+    }
+    else if (process < 0) {
+        printf("Error: No Child process Created\n");
+    }
 
     return 0;
 }
